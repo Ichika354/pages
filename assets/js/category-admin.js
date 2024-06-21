@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = "https://wirausahaanakulbi-server.vercel.app/category-admin";
+    const apiUrl = "http://localhost:3000/category-admin";
     const userLogin = document.getElementById('user-login');
 
     // Function to decode JWT token
