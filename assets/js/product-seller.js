@@ -46,12 +46,16 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       const tableBody = document.querySelector("#product-table tbody");
 
-      data.data.forEach((category, index) => {
+      data.data.forEach((product, index) => {
         const row = tableBody.insertRow();
         row.innerHTML = `
             <td>${index + 1}</td>
-            <td>${category.category}</td>
-            <td>${category.icon}</td>
+            <td>${product.users.name}</td>
+            <td>${product.product_name}</td>
+            <td>${product.categories.category_admins.category}</td>
+            <td>${product.price}</td>
+            <td>${product.stock}</td>
+            <td>${product.detail}</td>
             <td>
                 <button class="edit-btn">Edit</button>
                 <button class="delete-btn">Delete</button>

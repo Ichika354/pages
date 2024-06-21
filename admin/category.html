@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Category Management</title>
     <link rel="stylesheet" href="./../assets/style/admin.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -19,41 +19,34 @@
             </div>
             <ul class="sidebar-menu">
                 <li><a href="./dashboard.html"><i class="material-icons">dashboard</i> Dashboard</a></li>
-                <li><a href="./category.html"><i class="material-icons">category</i> Category</a></li>
+                <li><a href="./category.html" class="active"><i class="material-icons">category</i> Category</a></li>
                 <li><a href="./product-seller.html"><i class="material-icons">storefront</i> Product Seller</a></li>
-                <li><a href="#"><i class="material-icons">people</i> Seller</a></li>
-                <li><a href="#"><i class="material-icons">logout</i> Logout</a></li>
+                <li><a href="./seller.html"><i class="material-icons">people</i> Seller</a></li>
+                <li><a href="#" id="logoutButton"><i class="material-icons">logout</i> Logout</a></li>
             </ul>
         </nav>
         <div class="main-content">
             <nav class="navbar">
-                <h2>Dashboard</h2>
+                <h2>Category Management</h2>
                 <div class="navbar-right">
                     <a href="#" class="profile"><i class="material-icons">account_circle</i> Admin</a>
                 </div>
             </nav>
             <div class="content">
-                <h3>Welcome to the Admin Dashboard</h3>
-                <p>This is where you can manage your website.</p>
-                <!-- Add your dashboard content here -->
-
-                <div class="category-section">
-                    <h3>Category Management</h3>
-                    <table class="category-table" id="category-table">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Category</th>
-                                <th>Icon</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Dynamic content will be injected here -->
-                        </tbody>
-                    </table>
-                    <button class="add-category-btn">Add Category</button>
-                </div>
+                <table class="category-table" id="category-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Category</th>
+                            <th>Icon</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic content will be injected here -->
+                    </tbody>
+                </table>
+                <button class="add-category-btn" onclick="window.location.href='./add-category.html'">Add Category</button>
             </div>
         </div>
     </div>

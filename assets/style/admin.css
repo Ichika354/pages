@@ -180,3 +180,64 @@ body {
 .edit-btn:hover, .delete-btn:hover, .add-category-btn:hover {
     background-color: #34495e;
 }
+
+/* add */
+.add-category-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.add-category-section h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.add-category-section label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.add-category-section input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.add-category-section button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #34495e;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-category-section button:hover {
+    background-color: #313e4b;
+}
+
+.add-category-section .back-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+.add-category-section .back-btn:hover {
+    color: #0056b3;
+}

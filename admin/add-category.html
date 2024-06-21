@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Category</title>
+    <link rel="stylesheet" href="./../assets/style/admin.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <button class="sidebar-toggle"><i class="material-icons">menu</i></button>
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Dashboard</h3>
+                <p id="user-login"></p>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="./dashboard.html"><i class="material-icons">dashboard</i> Dashboard</a></li>
+                <li><a href="./category.html" class="active"><i class="material-icons">category</i> Category</a></li>
+                <li><a href="./product-seller.html"><i class="material-icons">storefront</i> Product Seller</a></li>
+                <li><a href="./seller.html"><i class="material-icons">people</i> Seller</a></li>
+                <li><a href="#" id="logoutButton"><i class="material-icons">logout</i> Logout</a></li>
+            </ul>
+        </nav>
+        <div class="main-content">
+            <nav class="navbar">
+                <h2>Add Category</h2>
+                <div class="navbar-right">
+                    <a href="#" class="profile"><i class="material-icons">account_circle</i> Admin</a>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="add-category-section">
+                    <h3>Add New Category</h3>
+                    <form id="categoryForm">
+                        <label for="category">Category:</label>
+                        <input type="text" id="category" name="category" required>
+                        <label for="icon">Icon:</label>
+                        <input type="text" id="icon" name="icon" required>
+                        <button type="submit">Add Category</button>
+                    </form>
+                    <a href="./category.html" class="back-btn">Back to Category Management</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to get cookie by name
+        function getCookie(name) {
+            const cookieString = document.cookie;
+            const cookies = cookieString.split(';');
+
+            for (let cookie of cookies) {
+                const [cookieName, cookieValue] = cookie.split('=').map(c => c.trim());
+                if (cookieName === name) {
+                    return cookieValue;
+                }
+            }
+
+            return null;
+        }
+
+        // Event listener for form submission
+        document.getElementById('categoryForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const category = document.getElementById('category').value;
+            const icon = document.getElementById('icon').value;
+
+            const url = 'https://wirausahaanakulbi-server.vercel.app/category-admin';
+            const accessToken = getCookie('token'); // Get access token from cookie
+            console.log(accessToken);
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + accessToken, // Use token from cookie
+                    },
+                    body: JSON.stringify({ category, icon }),
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.message || 'Failed to add category');
+                }
+
+                alert('Category added successfully!');
+                // Additional actions such as clearing form or navigating user after success
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to add category. Please try again.');
+            }
+        });
+    </script>
+</body>
+
+</html>
