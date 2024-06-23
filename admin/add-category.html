@@ -35,12 +35,12 @@
             <div class="content">
                 <div class="add-category-section">
                     <h3>Add New Category</h3>
-                    <form id="categoryForm">
+                    <form id="category-form">
                         <label for="category">Category:</label>
                         <input type="text" id="category" name="category" required>
                         <label for="icon">Icon:</label>
                         <input type="text" id="icon" name="icon" required>
-                        <button type="submit">Add Category</button>
+                        <button type="submit" id="addBtn">Add Category</button>
                     </form>
                     <a href="./category.html" class="back-btn">Back to Category Management</a>
                 </div>
@@ -48,56 +48,41 @@
         </div>
     </div>
 
+    <script src="./../assets/js/add-category-admin.js"></script>
     <script>
-        // Function to get cookie by name
-        function getCookie(name) {
-            const cookieString = document.cookie;
-            const cookies = cookieString.split(';');
+        const userLogin = document.getElementById("user-login");
+        function parseJwt(token) {
+            try {
+                const base64Url = token.split(".")[1];
+                const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+                const jsonPayload = decodeURIComponent(
+                    atob(base64)
+                        .split("")
+                        .map(function (c) {
+                            return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+                        })
+                        .join("")
+                );
 
-            for (let cookie of cookies) {
-                const [cookieName, cookieValue] = cookie.split('=').map(c => c.trim());
-                if (cookieName === name) {
-                    return cookieValue;
-                }
+                return JSON.parse(jsonPayload);
+            } catch (e) {
+                return {};
             }
-
-            return null;
         }
 
-        // Event listener for form submission
-        document.getElementById('categoryForm').addEventListener('submit', async function (event) {
-            event.preventDefault();
+        // Get the token from cookie (assuming it's already set)
+        const token = document.cookie
+            .split("; ")
+            .find((row) => row.startsWith("token="))
+            .split("=")[1];
 
-            const category = document.getElementById('category').value;
-            const icon = document.getElementById('icon').value;
-
-            const url = 'https://wirausahaanakulbi-server.vercel.app/category-admin';
-            const accessToken = getCookie('token'); // Get access token from cookie
-            console.log(accessToken);
-
-            try {
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer ' + accessToken, // Use token from cookie
-                    },
-                    body: JSON.stringify({ category, icon }),
-                });
-
-                const data = await response.json();
-
-                if (!response.ok) {
-                    throw new Error(data.message || 'Failed to add category');
-                }
-
-                alert('Category added successfully!');
-                // Additional actions such as clearing form or navigating user after success
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Failed to add category. Please try again.');
-            }
-        });
+        if (token) {
+            const user = parseJwt(token);
+            userLogin.textContent = user.name; // Update with user information, e.g., user.name
+        } else {
+            console.error("Token not found or expired.");
+            // Handle error or redirect to login page
+        }
     </script>
 </body>
 

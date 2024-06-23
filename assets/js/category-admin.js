@@ -53,15 +53,51 @@ document.addEventListener("DOMContentLoaded", () => {
                       <td>${category.category}</td>
                       <td>${category.icon}</td>
                       <td>
-                          <button class="edit-btn">Edit</button>
-                          <button class="delete-btn">Delete</button>
-                      </td>
-                  `;
+                          <button class="edit-btn" onclick="return window.location.href='./edit-category.html?id=${category.id_category_admin}'">Edit</button>
+                          <button class="delete-btn" data-id="${category.id_category_admin}">Delete</button>
+                </td>
+            `;
+      });
+
+      // Add event listeners to delete buttons
+      document.querySelectorAll(".delete-btn").forEach((button) => {
+        button.addEventListener("click", function () {
+          const categoryId = this.getAttribute("data-id");
+          deleteCategory(categoryId);
+        });
       });
     })
     .catch((error) => {
       console.error("There has been a problem with your fetch operation:", error);
     });
+
+  // Function to delete a category
+  function deleteCategory(categoryId) {
+    if (confirm("Are you sure you want to delete this category?")) {
+      fetch(`${apiUrl}/${categoryId}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        credentials: "include",
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          alert("Category deleted successfully");
+          // Remove the category row from the table
+          document.querySelector(`button[data-id="${categoryId}"]`).closest("tr").remove();
+        })
+        .catch((error) => {
+          console.error("There has been a problem with your fetch operation:", error);
+        });
+    }
+  }
 
   // Fungsi untuk logout
   async function logout() {

@@ -56,10 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <td>${product.price}</td>
             <td>${product.stock}</td>
             <td>${product.detail}</td>
-            <td>
-                <button class="edit-btn">Edit</button>
-                <button class="delete-btn">Delete</button>
-            </td>
         `;
       });
     })

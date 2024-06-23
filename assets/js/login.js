@@ -32,11 +32,11 @@ document.getElementById('submit-btn').addEventListener('click', async (e) => {
                 icon: 'success',
                 title: 'Login Successful',
                 text: 'You have been logged in successfully!',
-                showConfirmButton: false,
+                showConfirmButton: true,
                 timer: 1500
             }).then(() => {
                 // Redirect to another page after login
-                window.location.href = './../../admin/dashboard.html'; // Ubah ke halaman yang diinginkan
+                window.location.href = './admin/dashboard.html'; // Ubah ke halaman yang diinginkan
             });
         } else {
             throw new Error('No token received');
