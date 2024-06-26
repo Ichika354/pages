@@ -27,17 +27,18 @@ document.getElementById('submit-btn').addEventListener('click', async (e) => {
             // Set token in cookie
             document.cookie = `token=${data.token}; path=/;`;
 
+            if (data.role === "admin"){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login Successful',
+                    text: data.message,
+                    showConfirmButton: true,
+                }).then(() => {
+                    // Redirect to another page after login
+                    window.location.href = './admin/dashboard.html'; // Ubah ke halaman yang diinginkan
+                });
+            }
             // Success notification
-            Swal.fire({
-                icon: 'success',
-                title: 'Login Successful',
-                text: 'You have been logged in successfully!',
-                showConfirmButton: true,
-                timer: 1500
-            }).then(() => {
-                // Redirect to another page after login
-                window.location.href = './admin/dashboard.html'; // Ubah ke halaman yang diinginkan
-            });
         } else {
             throw new Error('No token received');
         }

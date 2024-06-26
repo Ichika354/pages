@@ -1,0 +1,693 @@
+{
+	"info": {
+		"_postman_id": "17b20872-e72a-4ddb-a90b-c05ecb349fa9",
+		"name": "ProductPublic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23649954"
+	},
+	"item": [
+		{
+			"name": "GetAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/users",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserLogin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsIm5hbWUiOiJNIEZhY2hyaXphIEZhcmhhbiIsIm5wbSI6NzE0MjIwMDA1LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTkzMjc1MjgsImV4cCI6MTcxOTM3MDcyOH0.RS_kPorhj6zcWKCq2O7g84-cD8nAVs7JE54VtpDawgY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/user/",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Gading Khairlambang\",\r\n    \"npm\" : 714220007,\r\n    \"numberPhone\" : \"0812344553\",\r\n    \"password\" : \"admin12345\",\r\n    \"confirmPassword\" : \"admin12345\",\r\n    \"role\" : \"Seller\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/registration",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"npm\" : 714220005,\r\n    \"password\" : \"admin12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/login",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAdminCategory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/category-admin",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"category-admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAdminCategoryByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/category-admin/2",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"category-admin",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostAdminCategory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsIm5hbWUiOiJNIEZhY2hyaXphIEZhcmhhbiIsIm5wbSI6NzE0MjIwMDA1LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTkyODAzODksImV4cCI6MTcxOTMyMzU4OX0.G--amTT4tP3lVasHTvAPqmp1d4G9-awfD33lEvnJ4hg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category\": \"Peralatan\",\r\n    \"icon\": \"fa-solid-fa-equipment\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/category-admin/",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"category-admin",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutAdminCategory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsIm5hbWUiOiJNIEZhY2hyaXphIEZhcmhhbiIsIm5wbSI6NzE0MjIwMDA1LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTkzMjc1MjgsImV4cCI6MTcxOTM3MDcyOH0.RS_kPorhj6zcWKCq2O7g84-cD8nAVs7JE54VtpDawgY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category\": \"Equipment\",\r\n    \"icon\": \"fa-solid-fa-equipment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/category-admin/21",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"category-admin",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteAdminCategory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsIm5hbWUiOiJNIEZhY2hyaXphIEZhcmhhbiIsIm5wbSI6NzE0MjIwMDA1LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTkzMjc1MjgsImV4cCI6MTcxOTM3MDcyOH0.RS_kPorhj6zcWKCq2O7g84-cD8nAVs7JE54VtpDawgY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/category-admin/21",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"category-admin",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/product",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/product/4",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"product",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductSeller",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE0LCJuYW1lIjoiUmFuaWEgQXl1bmkgS2FydGluaSBGaXRyaSIsIm5wbSI6NzE0MjIwMDMyLCJyb2xlIjoiU2VsbGVyIiwiaWF0IjoxNzE5MzI3OTk4LCJleHAiOjE3MTkzNzExOTh9.LOuSjBtdEjgXRCNrZuf_ZBvgqLAkJiT0umEsKnbq8nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/product-seller",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"product-seller"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE0LCJuYW1lIjoiUmFuaWEgQXl1bmkgS2FydGluaSBGaXRyaSIsIm5wbSI6NzE0MjIwMDMyLCJyb2xlIjoiU2VsbGVyIiwiaWF0IjoxNzE5MzI3OTk4LCJleHAiOjE3MTkzNzExOTh9.LOuSjBtdEjgXRCNrZuf_ZBvgqLAkJiT0umEsKnbq8nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_user\": 14,\r\n            \"id_category\": 1,\r\n            \"product_name\": \"Pizza\",\r\n            \"price\": 7000,\r\n            \"photo\": \"2521.jpg\",\r\n            \"stock\": 100,\r\n            \"detail\": \"Posted detailed description of the product\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/product",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE0LCJuYW1lIjoiUmFuaWEgQXl1bmkgS2FydGluaSBGaXRyaSIsIm5wbSI6NzE0MjIwMDMyLCJyb2xlIjoiU2VsbGVyIiwiaWF0IjoxNzE5MzI3OTk4LCJleHAiOjE3MTkzNzExOTh9.LOuSjBtdEjgXRCNrZuf_ZBvgqLAkJiT0umEsKnbq8nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_user\": 14,\r\n            \"id_category\": 1,\r\n            \"product_name\": \"Pizza\",\r\n            \"price\": 7000,\r\n            \"photo\": \"2521.jpg\",\r\n            \"stock\": 100,\r\n            \"detail\": \"Updated detailed description of the product\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/product/6",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"product",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE0LCJuYW1lIjoiUmFuaWEgQXl1bmkgS2FydGluaSBGaXRyaSIsIm5wbSI6NzE0MjIwMDMyLCJyb2xlIjoiU2VsbGVyIiwiaWF0IjoxNzE5MzI3OTk4LCJleHAiOjE3MTkzNzExOTh9.LOuSjBtdEjgXRCNrZuf_ZBvgqLAkJiT0umEsKnbq8nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/product/6",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"product",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllCategory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/category",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCategorySeller",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE0LCJuYW1lIjoiUmFuaWEgQXl1bmkgS2FydGluaSBGaXRyaSIsIm5wbSI6NzE0MjIwMDMyLCJyb2xlIjoiU2VsbGVyIiwiaWF0IjoxNzE5MzI3OTk4LCJleHAiOjE3MTkzNzExOTh9.LOuSjBtdEjgXRCNrZuf_ZBvgqLAkJiT0umEsKnbq8nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/category-seller",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"category-seller"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostCategorySeller",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE0LCJuYW1lIjoiUmFuaWEgQXl1bmkgS2FydGluaSBGaXRyaSIsIm5wbSI6NzE0MjIwMDMyLCJyb2xlIjoiU2VsbGVyIiwiaWF0IjoxNzE5MzI3OTk4LCJleHAiOjE3MTkzNzExOTh9.LOuSjBtdEjgXRCNrZuf_ZBvgqLAkJiT0umEsKnbq8nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_category_admin\" : 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/category",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutCategorySeller",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE0LCJuYW1lIjoiUmFuaWEgQXl1bmkgS2FydGluaSBGaXRyaSIsIm5wbSI6NzE0MjIwMDMyLCJyb2xlIjoiU2VsbGVyIiwiaWF0IjoxNzE5MzI3OTk4LCJleHAiOjE3MTkzNzExOTh9.LOuSjBtdEjgXRCNrZuf_ZBvgqLAkJiT0umEsKnbq8nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_category_admin\" : 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/category/11",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"category",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCategorySeller",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE0LCJuYW1lIjoiUmFuaWEgQXl1bmkgS2FydGluaSBGaXRyaSIsIm5wbSI6NzE0MjIwMDMyLCJyb2xlIjoiU2VsbGVyIiwiaWF0IjoxNzE5MzI3OTk4LCJleHAiOjE3MTkzNzExOTh9.LOuSjBtdEjgXRCNrZuf_ZBvgqLAkJiT0umEsKnbq8nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/category/11",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"category",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAddressUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE0LCJuYW1lIjoiUmFuaWEgQXl1bmkgS2FydGluaSBGaXRyaSIsIm5wbSI6NzE0MjIwMDMyLCJyb2xlIjoiU2VsbGVyIiwiaWF0IjoxNzE5MzI3OTk4LCJleHAiOjE3MTkzNzExOTh9.LOuSjBtdEjgXRCNrZuf_ZBvgqLAkJiT0umEsKnbq8nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/address",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostAddressUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE0LCJuYW1lIjoiUmFuaWEgQXl1bmkgS2FydGluaSBGaXRyaSIsIm5wbSI6NzE0MjIwMDMyLCJyb2xlIjoiU2VsbGVyIiwiaWF0IjoxNzE5MzI3OTk4LCJleHAiOjE3MTkzNzExOTh9.LOuSjBtdEjgXRCNrZuf_ZBvgqLAkJiT0umEsKnbq8nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"province_id\": 11,\r\n    \"regency_id\": 1101,\r\n    \"district_id\": 1101010,\r\n    \"village_id\": 1101010001,\r\n    \"patokan\": \"JL Latiung No 24\"   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wirausahaanakulbi-server.vercel.app/address",
+					"protocol": "https",
+					"host": [
+						"wirausahaanakulbi-server",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"address"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
